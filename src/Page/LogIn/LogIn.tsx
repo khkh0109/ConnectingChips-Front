@@ -66,7 +66,7 @@ const LogIn = () => {
           <SignClearBtnS type='submit'>로그인</SignClearBtnS>
         </LoginFormS>
         <SignUpLinkS>
-          <p className='hoxy'>회원이 아니신가요?</p>
+          <p>회원이 아니신가요?</p>
           <Link to='/signUp'>회원가입</Link>
           <div className='img'>
             <img src={Arrow_Right} alt='arrowIcon' />
@@ -156,11 +156,8 @@ const SignUpLinkS = styled.div`
   justify-content: center;
   p {
     font-size: 0.875rem;
-
-    &.hoxy {
-      color: var(--font-color3);
-      margin-right: 0.4rem;
-    }
+    color: var(--font-color3);
+    margin-right: 0.4rem;
   }
   a {
     font-size: 0.875rem;
