@@ -2,6 +2,7 @@ import Banner from '../../Component/Banner';
 import { GroupHeader } from '../../Component/Mission/GroupHeader';
 import { LoginInput } from '../../Component/Login/LoginInput';
 import LoginForm from '../../Component/Login/LoginForm';
+import SignUpLink from '../../Component/Login/SignUpLink';
 
 import { SignClearBtnS } from '../../StyleComp/SignBtnS';
 
@@ -10,4 +11,4 @@ import { ReactComponent as ArrowRight } from '../../image/Icon/Arrow/Arrow_icon_
 export * from '../../StyleComp/LoginInputS';
 export * from '../../API/login';
 
-export { Banner, GroupHeader, SignClearBtnS, ArrowRight, LoginInput, LoginForm };
+export { Banner, GroupHeader, SignClearBtnS, ArrowRight, LoginInput, LoginForm, SignUpLink };

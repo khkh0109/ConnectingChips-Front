@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { LoginInput } from './LoginInput';
 import { postLogin } from '../../API/login';
 import { SignClearBtnS } from '../../StyleComp/SignBtnS';
-import { ReactComponent as ArrowRight } from '../../image/Icon/Arrow/Arrow_icon_Right.svg';
 
 type bindValue = {
   value: string;
@@ -59,13 +58,6 @@ export default function LoginForm() {
 
         <SignClearBtnS type='submit'>로그인</SignClearBtnS>
       </LoginFormS>
-      <SignUpLinkS>
-        <p>회원이 아니신가요?</p>
-        <Link to='/signUp' className='sign-up-link'>
-          <span>회원가입</span>
-          <ArrowRight />
-        </Link>
-      </SignUpLinkS>
     </LoginOuterContainerS>
   );
 }
@@ -101,24 +93,4 @@ const LoginInnerContainerS = styled.div`
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 0.47rem;
-`;
-
-const SignUpLinkS = styled.div`
-  display: flex;
-  margin-top: 4.25rem;
-
-  p {
-    margin-right: 0.4rem;
-    font-size: 0.875rem;
-    color: var(--font-color3);
-  }
-
-  .sign-up-link {
-    font-size: 0.875rem;
-  }
-
-  svg {
-    width: 0.75rem;
-    margin-left: 3px;
-  }
 `;

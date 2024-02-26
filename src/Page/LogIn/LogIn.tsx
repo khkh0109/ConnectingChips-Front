@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { GroupHeader, Banner, LoginForm } from './LoginBarrel';
+import { GroupHeader, Banner, LoginForm, SignUpLink } from './LoginBarrel';
 
 const LogIn = () => {
   return (
@@ -8,6 +8,7 @@ const LogIn = () => {
       <GroupHeader text='로그인' />
       <Banner />
       <LoginForm />
+      <SignUpLink />
     </ContainerS>
   );
 };
