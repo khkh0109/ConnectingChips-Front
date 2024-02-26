@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 
 /** 2023-08-24 LogIn.tsx - 로그인 페이지 스타일 */
+// TODO: 사용하지 않으면 삭제하기
 const LogInS = styled.div`
   width: var(--width-mobile);
   height: 100%;

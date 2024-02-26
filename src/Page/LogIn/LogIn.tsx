@@ -5,8 +5,7 @@ import { styled } from 'styled-components';
 import {
   GroupHeader,
   Banner,
-  LogInS,
-  LoginInputS,
+  LoginInput,
   SignClearBtnS,
   ArrowRight,
   postLogin,
@@ -40,7 +39,7 @@ const LogIn = () => {
   };
 
   return (
-    <LogInS>
+    <ContainerS>
       <GroupHeader text='로그인' />
       <Banner />
       <LoginOuterContainerS>
@@ -73,52 +72,18 @@ const LogIn = () => {
           </Link>
         </SignUpLinkS>
       </LoginOuterContainerS>
-    </LogInS>
+    </ContainerS>
   );
 };
 
 export default LogIn;
 
-interface LoginInputProps {
-  sort: 'ID' | 'PW';
-  isdefault: boolean;
-  inputbind: BindValue;
-  setInputState: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const LoginInput = ({
-  sort,
-  isdefault,
-  inputbind,
-  setInputState,
-}: LoginInputProps): JSX.Element => {
-  const { value, setValue } = inputbind;
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-    setInputState('default');
-  };
-
-  if (sort === 'ID')
-    return (
-      <LoginInputS
-        placeholder='아이디를 입력해 주세요'
-        className={isdefault ? '' : 'failed'}
-        value={value}
-        onChange={handleInputChange}
-      />
-    );
-
-  return (
-    <LoginInputS
-      placeholder='비밀번호를 입력해 주세요'
-      className={isdefault ? '' : 'failed'}
-      type={true ? 'password' : 'text'}
-      value={value}
-      onChange={handleInputChange}
-    />
-  );
-};
+const ContainerS = styled.div`
+  width: var(--width-mobile);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
 const LoginOuterContainerS = styled.div`
   display: flex;
