@@ -130,8 +130,8 @@ const LoginOuterContainerS = styled.div`
 const LoginFormS = styled.form`
   display: flex;
   flex-direction: column;
-  height: 13.75rem;
   width: 100%;
+  height: 13.75rem;
 
   p.error {
     color: var(--system-red);
@@ -151,12 +151,13 @@ const LoginInnerContainerS = styled.div`
 `;
 
 const SignUpLinkS = styled.div`
-  margin-top: 4.25rem;
   display: flex;
+  margin-top: 4.25rem;
+
   p {
+    margin-right: 0.4rem;
     font-size: 0.875rem;
     color: var(--font-color3);
-    margin-right: 0.4rem;
   }
 
   .sign-up-link {
@@ -164,7 +165,7 @@ const SignUpLinkS = styled.div`
   }
 
   svg {
-    margin-left: 3px;
     width: 0.75rem;
+    margin-left: 3px;
   }
 `;
