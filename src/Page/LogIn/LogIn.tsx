@@ -65,13 +65,13 @@ const LogIn = () => {
 
           <SignClearBtnS type='submit'>로그인</SignClearBtnS>
         </LoginFormS>
-        <NudgeSignS>
+        <SignUpLinkS>
           <p className='hoxy'>회원이 아니신가요?</p>
           <Link to='/signUp'>회원가입</Link>
           <div className='img'>
             <img src={Arrow_Right} alt='arrowIcon' />
           </div>
-        </NudgeSignS>
+        </SignUpLinkS>
       </LoginOuterContainerS>
     </LogInS>
   );
@@ -150,7 +150,7 @@ const LoginInnerContainerS = styled.div`
   margin-bottom: 0.47rem;
 `;
 
-const NudgeSignS = styled.div`
+const SignUpLinkS = styled.div`
   margin-top: 4.25rem;
   display: flex;
   justify-content: center;
