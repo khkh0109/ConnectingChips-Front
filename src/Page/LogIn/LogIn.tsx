@@ -15,8 +15,8 @@ const LogIn = () => {
 export default LogIn;
 
 const ContainerS = styled.div`
-  width: var(--width-mobile);
-  height: 100%;
   display: flex;
   flex-direction: column;
+  width: var(--width-mobile);
+  height: 100%;
 `;
