@@ -1,4 +1,4 @@
-import Banner from '../../Component/SignUp/Banner';
+import Banner from '../../Component/Banner';
 import Loginheader from '../../Component/SignUp/Loginheader';
 import Terms from '../../Component/SignUp/Terms';
 import { GroupHeader } from '../../Component/Mission/GroupHeader';

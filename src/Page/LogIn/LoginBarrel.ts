@@ -1,4 +1,4 @@
-import Banner from '../../Component/SignUp/Banner';
+import Banner from '../../Component/Banner';
 import { GroupHeader } from '../../Component/Mission/GroupHeader';
 import { LoginInput } from '../../Component/Login/LoginInput';
 import LoginForm from '../../Component/Login/LoginForm';
