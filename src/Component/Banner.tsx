@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import Logo_001 from '../../image/Home/Logo_001.png';
+import Logo_001 from '../image/Home/Logo_001.png';
 
 const Banner = (): JSX.Element => {
   return <BannerS src={Logo_001} alt='logo' />;
