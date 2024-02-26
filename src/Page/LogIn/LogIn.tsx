@@ -8,7 +8,7 @@ import {
   LogInS,
   LoginInputS,
   SignClearBtnS,
-  Arrow_Right,
+  ArrowRight,
   postLogin,
 } from './LoginBarrel';
 
@@ -67,10 +67,10 @@ const LogIn = () => {
         </LoginFormS>
         <SignUpLinkS>
           <p>회원이 아니신가요?</p>
-          <Link to='/signUp'>회원가입</Link>
-          <div className='img'>
-            <img src={Arrow_Right} alt='arrowIcon' />
-          </div>
+          <Link to='/signUp' className='sign-up-link'>
+            <span>회원가입</span>
+            <ArrowRight />
+          </Link>
         </SignUpLinkS>
       </LoginOuterContainerS>
     </LogInS>
@@ -153,20 +153,18 @@ const LoginInnerContainerS = styled.div`
 const SignUpLinkS = styled.div`
   margin-top: 4.25rem;
   display: flex;
-  justify-content: center;
   p {
     font-size: 0.875rem;
     color: var(--font-color3);
     margin-right: 0.4rem;
   }
-  a {
+
+  .sign-up-link {
     font-size: 0.875rem;
   }
-  .img {
-    width: 0.75rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  svg {
     margin-left: 3px;
+    width: 0.75rem;
   }
 `;
