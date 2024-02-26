@@ -4,17 +4,17 @@ import { ReactComponent as ArrowRight } from '../../image/Icon/Arrow/Arrow_icon_
 
 export default function SignUpLink() {
   return (
-    <SignUpLinkS>
+    <ContainerS>
       <p>회원이 아니신가요?</p>
       <Link to='/signUp' className='sign-up-link'>
         <span>회원가입</span>
         <ArrowRight />
       </Link>
-    </SignUpLinkS>
+    </ContainerS>
   );
 }
 
-const SignUpLinkS = styled.div`
+const ContainerS = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 4.25rem;
