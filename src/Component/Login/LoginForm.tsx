@@ -6,7 +6,7 @@ import { LoginInput } from './LoginInput';
 import { postLogin } from '../../API/login';
 import { SignClearBtnS } from '../../StyleComp/SignBtnS';
 
-type bindValue = {
+type BindValue = {
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -18,8 +18,8 @@ export default function LoginForm() {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
 
-  const idBind: bindValue = { value: nickname, setValue: setNickname };
-  const pwBind: bindValue = { value: password, setValue: setPassword };
+  const idBind: BindValue = { value: nickname, setValue: setNickname };
+  const pwBind: BindValue = { value: password, setValue: setPassword };
 
   const isDefault = inputState === 'default';
 
