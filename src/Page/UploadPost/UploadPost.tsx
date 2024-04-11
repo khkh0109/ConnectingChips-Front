@@ -15,9 +15,8 @@ import {
   initMind,
 } from '../../Component/Mission/GroupArticle';
 
-import { notifyImgSizeLimitErr } from '../../Component/Toast/ImgSizeLimitMsg';
+import { validateImage, showToast } from './validateImage';
 import { notifyNetErr } from '../../Component/Toast/NetworkErrorMsg';
-import { notifyExtensionsBlockErr } from '../../Component/Toast/ExtensionsBlockMsg';
 
 import { getUser } from '../../API/Users';
 import { postCreateBoard } from '../../API/Boards';
@@ -34,6 +33,9 @@ import {
 } from '../../constant/error';
 import { GroupHeader } from '../GroupPage/GroupPageBarrel';
 
+import { SIZE_10MB } from '../../constant/uploadPost';
+import { allowedExtensions } from '../../data/uploadPost';
+
 interface Image {
   name: string;
   file: null | File;
@@ -41,7 +43,6 @@ interface Image {
 
 const UploadPost = () => {
   const INITIAL_TEXT = '오늘 작심 성공!';
-  const FILE_SIZE_LIMIT_10MB = 10485760;
 
   const navigate = useNavigate();
   const { mindId } = useParams();
@@ -99,22 +100,17 @@ const UploadPost = () => {
 
   const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files?.length) return;
-
-    const fileName = e.target.files[0].name;
-    const allowedExtensions = ['.png', '.jpg', '.jpeg'];
-    const fileExtension = fileName.slice(fileName.lastIndexOf('.'));
-
-    if (!allowedExtensions.includes(fileExtension.toLocaleLowerCase())) {
-      return notifyExtensionsBlockErr();
-    }
-
-    if (e.target.files[0].size > FILE_SIZE_LIMIT_10MB) {
-      return notifyImgSizeLimitErr();
-    }
-
     const file = e.target.files[0];
-    setImage({ name: file.name, file });
-    setImageUrl(URL.createObjectURL(file));
+
+    // 유효성 검사 함수 호출
+    const { isValid, errorMessage } = validateImage(file, allowedExtensions, SIZE_10MB);
+
+    if (isValid) {
+      setImage({ name: file.name, file });
+      setImageUrl(URL.createObjectURL(file));
+    } else {
+      showToast(errorMessage);
+    }
   };
 
   const handleFileInputClick = (e: React.MouseEvent<HTMLInputElement>) => {
