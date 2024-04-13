@@ -5,7 +5,7 @@ import { getExampleImage } from '../../API/Mind';
 import { Arrow_Down } from '../ArrowBarrel';
 import defaultImage from '../../image/error-example-image.png';
 
-const CreateExampleImage = (): JSX.Element => {
+const CreateExampleImage = () => {
   const { mindId } = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [exampleImage, setExampleImage] = useState(defaultImage);
