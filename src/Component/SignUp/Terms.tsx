@@ -14,7 +14,7 @@ interface TermsData {
   contents: string;
 }
 
-const Terms = ({ isAllAgreed, setIsAllAgreed }: TermsProps): JSX.Element => {
+const Terms = ({ isAllAgreed, setIsAllAgreed }: TermsProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [termsData, setTermsData] = useState<TermsData>({ title: '', contents: '', type: '' });
   const [isAgreed, setIsAgreed] = useState({

@@ -17,7 +17,7 @@ import EmailVerificationModal from '../../Component/SignUp/EmailVerificationModa
 import { ReactComponent as CheckIcon } from '../../image/Icon/check-icon.svg';
 import { GroupHeader } from '../../Component/Mission/GroupHeader';
 
-const SignUp = (): JSX.Element => {
+const SignUp = () => {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isValid, setIsValid] = useState(true);
@@ -258,7 +258,7 @@ const SignUpInput = ({
   isError,
   handleIdDuplicateCheck,
   isDuplicateId,
-}: SignUpInputProps): JSX.Element => {
+}: SignUpInputProps) => {
   const { value, setValue } = handlerBind;
 
   const handlerOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {

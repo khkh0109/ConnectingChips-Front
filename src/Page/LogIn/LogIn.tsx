@@ -9,7 +9,7 @@ type BindValue = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const LogIn = (): JSX.Element => {
+const LogIn = () => {
   const [inputState, setInputState] = useState('default');
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
@@ -78,12 +78,7 @@ interface LoginInputProps {
   setInputState: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const LoginInput = ({
-  sort,
-  isdefault,
-  inputbind,
-  setInputState,
-}: LoginInputProps): JSX.Element => {
+const LoginInput = ({ sort, isdefault, inputbind, setInputState }: LoginInputProps) => {
   const { value, setValue } = inputbind;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
