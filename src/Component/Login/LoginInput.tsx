@@ -13,12 +13,7 @@ interface LoginInputProps {
   setInputState: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const LoginInput = ({
-  sort,
-  isdefault,
-  inputbind,
-  setInputState,
-}: LoginInputProps): JSX.Element => {
+export default function LoginInput({ sort, isdefault, inputbind, setInputState }: LoginInputProps) {
   const { value, setValue } = inputbind;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,4 +40,4 @@ export const LoginInput = ({
       onChange={handleInputChange}
     />
   );
-};
+}

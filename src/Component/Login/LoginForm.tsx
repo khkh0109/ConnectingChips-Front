@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { LoginInput } from './LoginInput';
+import LoginInput from './LoginInput';
 import { postLogin } from '../../API/login';
 import { SignClearBtnS } from '../../StyleComp/SignBtnS';
 
