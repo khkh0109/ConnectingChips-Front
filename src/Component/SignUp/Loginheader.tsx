@@ -2,7 +2,6 @@ import { styled } from 'styled-components';
 import { Arrow_Left_B } from '../../Component/ArrowBarrel';
 import { goBack } from '../Mission/GroupHeader';
 
-/** 2023-08-27 Loginheader.tsx - 로그인/회원가입 헤더 */
 const Loginheader = ({ type }: { type: '로그인' | '회원가입' }) => {
   return (
     <LoginheaderS>
@@ -16,7 +15,6 @@ const Loginheader = ({ type }: { type: '로그인' | '회원가입' }) => {
 
 export default Loginheader;
 
-/** 2023-08-27 Loginheader.tsx - 로그인/회원가입 헤더 */
 const LoginheaderS = styled.header`
   align-self: start;
   padding-left: 1rem;
