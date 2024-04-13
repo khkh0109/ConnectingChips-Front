@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 import { GroupHeader, Banner, LoginForm, SignUpLink } from './LoginBarrel';
 
-const LogIn = () => {
+export default function LogIn() {
   return (
     <ContainerS>
       <GroupHeader text='로그인' />
@@ -11,9 +11,7 @@ const LogIn = () => {
       <SignUpLink />
     </ContainerS>
   );
-};
-
-export default LogIn;
+}
 
 const ContainerS = styled.div`
   display: flex;
