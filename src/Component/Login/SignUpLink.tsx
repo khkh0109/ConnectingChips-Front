@@ -31,6 +31,6 @@ const ContainerS = styled.div`
 
   svg {
     width: 0.75rem;
-    margin-left: 3px;
+    margin-left: 0.1875rem;
   }
 `;
