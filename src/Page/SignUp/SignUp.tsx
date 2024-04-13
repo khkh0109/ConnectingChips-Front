@@ -1,5 +1,14 @@
-import { styled, useEffect, useState, useNavigate, useLoginCheck } from './SignUpBarrel';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { styled } from 'styled-components';
+
 import {
+  SquareButton,
+  EmailVerificationModal,
+  CheckIcon,
+  idDuplicateCheck,
+  postAuthenticationEmail,
+  useLoginCheck,
   Banner,
   LogInS,
   LoginInputS,
@@ -7,15 +16,10 @@ import {
   SignNotClearBtnS,
   infoIcon,
   Terms,
+  GroupHeader,
+  type handlerBind,
+  useSignup,
 } from './SignUpBarrel';
-import { type handlerBind, useSignup } from './SignUpBarrel';
-import { idDuplicateCheck } from '../../API/signup';
-import { postAuthenticationEmail } from '../../API/Users';
-
-import { SquareButton } from '../../Component/SignUp/SquareButton';
-import EmailVerificationModal from '../../Component/SignUp/EmailVerificationModal';
-import { ReactComponent as CheckIcon } from '../../image/Icon/check-icon.svg';
-import { GroupHeader } from '../../Component/Mission/GroupHeader';
 
 const SignUp = () => {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);

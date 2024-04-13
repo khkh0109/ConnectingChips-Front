@@ -1,18 +1,29 @@
-import { useNavigate } from 'react-router-dom';
-import { styled } from 'styled-components';
-import { useEffect, useState } from 'react';
-import useLoginCheck from '../../Hooks/useLoginCheck';
 import Banner from '../../Component/SignUp/Banner';
-import { LogInS, LoginInputS } from '../../StyleComp/LoginInputS';
-import { SignClearBtnS, SignNotClearBtnS } from '../../StyleComp/SignBtnS';
-import { type handlerBind, useSignup } from '../../Hooks/useSignup';
-import scrollTop from '../../Hooks/scrollTop';
 import Loginheader from '../../Component/SignUp/Loginheader';
 import Terms from '../../Component/SignUp/Terms';
-import infoIcon from '../../image/Icon/Info_icon.svg';
+import { GroupHeader } from '../../Component/Mission/GroupHeader';
+import { SquareButton } from '../../Component/SignUp/SquareButton';
+import EmailVerificationModal from '../../Component/SignUp/EmailVerificationModal';
 
-export { styled, useEffect, useState, useNavigate, useLoginCheck };
+import { LogInS, LoginInputS } from '../../StyleComp/LoginInputS';
+import { SignClearBtnS, SignNotClearBtnS } from '../../StyleComp/SignBtnS';
+
+import useLoginCheck from '../../Hooks/useLoginCheck';
+import { type handlerBind, useSignup } from '../../Hooks/useSignup';
+
+import { idDuplicateCheck } from '../../API/signup';
+import { postAuthenticationEmail } from '../../API/Users';
+
+import infoIcon from '../../image/Icon/Info_icon.svg';
+import { ReactComponent as CheckIcon } from '../../image/Icon/check-icon.svg';
+
 export {
+  SquareButton,
+  EmailVerificationModal,
+  CheckIcon,
+  idDuplicateCheck,
+  postAuthenticationEmail,
+  useLoginCheck,
   Banner,
   LogInS,
   LoginInputS,
@@ -21,5 +32,7 @@ export {
   Loginheader,
   infoIcon,
   Terms,
+  GroupHeader,
+  type handlerBind,
+  useSignup,
 };
-export { type handlerBind, useSignup, scrollTop };
