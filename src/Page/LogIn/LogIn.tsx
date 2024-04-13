@@ -1,21 +1,23 @@
 import { styled } from 'styled-components';
 
-import { GroupHeader, Banner, LoginForm, SignUpLink } from './LoginBarrel';
+import { GroupHeader, Logo, LoginForm, SignUpLink } from './LoginBarrel';
 
 export default function LogIn() {
   return (
-    <ContainerS>
+    <>
       <GroupHeader text='로그인' />
-      <Banner />
-      <LoginForm />
-      <SignUpLink />
-    </ContainerS>
+      <ContainerS>
+        <Logo mode='dark' width='8.125rem' margin='0 auto 2rem' />
+        <LoginForm />
+        <SignUpLink />
+      </ContainerS>
+    </>
   );
 }
 
 const ContainerS = styled.div`
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
   width: var(--width-mobile);
   height: 100%;
+  padding: 6.625rem 1rem 0;
 `;
