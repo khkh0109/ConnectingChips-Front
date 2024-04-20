@@ -26,11 +26,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route
-            path='/Login'
+            path='/login'
             element={<OAuthPage component={<Login />} authenticated='block' />}
           />
           <Route
-            path='/SignUp'
+            path='/signUp'
             element={<OAuthPage component={<SignUp />} authenticated='block' />}
           />
           <Route
