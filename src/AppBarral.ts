@@ -5,7 +5,7 @@ import Feed from './Page/Feed/Feed';
 import MyPage from './Page/MyPage/MyPage';
 import GroupPage from './Page/GroupPage/GroupPage';
 import CommentPage from './Page/GroupPage/Comment/CommentPage';
-import Login from './Page/Login/Login';
+import Login from './Page/LogIn/LogIn';
 import UploadPost from './Page/UploadPost/UploadPost';
 import SignUp from './Page/SignUp/SignUp';
 import NotFound from './Page/NotFound/NotFound';
