@@ -6,7 +6,7 @@ import {
   Feed,
   GroupPage,
   CommentPage,
-  LogIn,
+  Login,
   UploadPost,
   SignUp,
   NotFound,
@@ -26,8 +26,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route
-            path='/LogIn'
-            element={<OAuthPage component={<LogIn />} authenticated='block' />}
+            path='/Login'
+            element={<OAuthPage component={<Login />} authenticated='block' />}
           />
           <Route
             path='/SignUp'
@@ -41,13 +41,11 @@ function App() {
             path='/groupPage/:mindId'
             element={<GroupCheck component={<GroupPage />} sort='Page' />}
           />
-          <Route
-            path='/groupPage/:mindId/:postId'
-            element={<GroupCheck component={<CommentPage />} sort='Page' />}
-          />
+          <Route path='/groupPage/:mindId/:postId' element={<CommentPage />} />
           <Route
             path='/uploadPost/:mindId'
-            element={<GroupCheck component={<UploadPost />} sort='Upload' />}
+            // element={<GroupCheck component={<UploadPost />} sort='Upload' />}
+            element={<UploadPost />}
           />
           <Route path='/feed' element={<Feed />} />
           <Route
