@@ -5,7 +5,7 @@ import Feed from './Page/Feed/Feed';
 import MyPage from './Page/MyPage/MyPage';
 import GroupPage from './Page/GroupPage/GroupPage';
 import CommentPage from './Page/GroupPage/Comment/CommentPage';
-import LogIn from './Page/LogIn/LogIn';
+import Login from './Page/Login/Login';
 import UploadPost from './Page/UploadPost/UploadPost';
 import SignUp from './Page/SignUp/SignUp';
 import NotFound from './Page/NotFound/NotFound';
@@ -22,7 +22,7 @@ export {
   MyPage,
   GroupPage,
   CommentPage,
-  LogIn,
+  Login,
   UploadPost,
   SignUp,
   NotFound,
