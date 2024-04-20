@@ -7,7 +7,7 @@ export default function LogIn() {
     <>
       <GroupHeader text='로그인' />
       <ContainerS>
-        <Logo mode='dark' width='8.125rem' margin='0 auto 2rem' />
+        <Logo mode='dark' width='8.125rem' />
         <LoginForm />
         <SignUpLink />
       </ContainerS>
