@@ -1,4 +1,5 @@
 import { isExtensionValid, validateImage } from './validateImage';
+import { allowedExtensions } from '../../data/uploadPost';
 
 // 파일 객체를 모의(Mock)하기 위한 유틸리티 함수
 const createMockFile = (name: string, size: number, type: string): File => {
@@ -12,42 +13,36 @@ const createMockFile = (name: string, size: number, type: string): File => {
 describe('isExtensionValid Function', () => {
   it('유효한 확장자라면 true를 리턴함', () => {
     const fileName = 'image.jpeg';
-    const allowedExtensions = ['.jpeg', '.png', '.gif'];
     const result = isExtensionValid(fileName, allowedExtensions);
     expect(result).toBe(true);
   });
 
   it('대소문자 구분 없이 유효한 확장자라면 true를 리턴함', () => {
     const fileName = 'image.JPEG';
-    const allowedExtensions = ['.jpeg', '.png', '.gif'];
     const result = isExtensionValid(fileName, allowedExtensions);
     expect(result).toBe(true);
   });
 
   it('유효하지 않은 확장자라면 false를 리턴함', () => {
     const fileName = 'document.pdf';
-    const allowedExtensions = ['.jpeg', '.png', '.gif'];
     const result = isExtensionValid(fileName, allowedExtensions);
     expect(result).toBe(false);
   });
 
   it('확장자가 없는 경우 false를 리턴함', () => {
     const fileName = 'image';
-    const allowedExtensions = ['.jpeg', '.png', '.gif'];
     const result = isExtensionValid(fileName, allowedExtensions);
     expect(result).toBe(false);
   });
 
   it('파일 이름에 점이 여러 개 있는 경우 제일 마지막 .을 기준으로 확장자를 판단하고 유효하면 true를 반환함', () => {
     const fileName = 'archive.01.png';
-    const allowedExtensions = ['.png', '.zip'];
     const result = isExtensionValid(fileName, allowedExtensions);
     expect(result).toBe(true);
   });
 });
 
 describe('validateImage Function', () => {
-  const allowedExtensions = ['.jpg', '.jpeg', '.png'];
   const fileSizeLimit = 10 * 1024 * 1024; // 10MB
 
   it('유효한 확장자와 허용 가능한 파일 크기를 가진 파일에 대해 true를 반환해야 함', () => {
