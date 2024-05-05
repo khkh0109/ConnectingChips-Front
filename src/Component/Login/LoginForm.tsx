@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import LoginInput from './LoginInput';
 import { postLogin } from '../../API/login';
-import { SignClearBtnS } from '../../StyleComp/SignBtnS';
+import { WideButton } from '../WideButton';
 
 type BindValue = {
   value: string;
@@ -56,7 +56,7 @@ export default function LoginForm() {
           {!isDefault && <p className='error'>아이디 혹은 비밀번호가 일치하지 않습니다</p>}
         </LoginContainerS>
 
-        <SignClearBtnS type='submit'>로그인</SignClearBtnS>
+        <WideButton>로그인</WideButton>
       </LoginFormS>
     </LoginOuterContainerS>
   );

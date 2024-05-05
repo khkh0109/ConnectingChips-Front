@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import MarkDown from '../Markdown/Markdown';
 import { GroupHeader } from '../../Component/Mission/GroupHeader';
+import { WideButton, ButtonWrapperS } from '../WideButton';
 
 interface TermsModalProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -53,8 +54,8 @@ const TermsModal = ({ setIsOpen, termsData, setIsAgreed }: TermsModalProps) => {
     <ContainerS>
       <GroupHeader btnType='close' text={termsData.title} btnState={setIsOpen} />
       <MarkDown source={termsData.contents} className='modal_contents' />
-      <ButtonWrapperS>
-        <button onClick={handleAgreeButtonClick}>동의</button>
+      <ButtonWrapperS $fixed>
+        <WideButton onClick={handleAgreeButtonClick}>동의</WideButton>
       </ButtonWrapperS>
     </ContainerS>
   );
@@ -72,22 +73,4 @@ const ContainerS = styled.div`
   bottom: 0;
   z-index: 120;
   background-color: var(--color-white);
-`;
-
-const ButtonWrapperS = styled.div`
-  padding: 1rem;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--color-white);
-
-  button {
-    width: 100%;
-    height: 3.5rem;
-    border-radius: 1.875rem;
-    background-color: var(--color-main);
-    color: var(--font-color1);
-    font-size: 1rem;
-  }
 `;

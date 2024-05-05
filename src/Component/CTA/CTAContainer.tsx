@@ -66,15 +66,6 @@ const BackButton = (): JSX.Element => {
   return <BackButtonS onClick={() => navigate(-1)}>이전 페이지로</BackButtonS>;
 };
 
-/** 2023-08-22 CTAContainer.tsx - 인증하기 버튼 */
-const SubmitButtonCTA = ({ hasImage }: { hasImage: boolean }): JSX.Element => {
-  return (
-    <CTAButtonS valid={String(hasImage)} disabled={!hasImage}>
-      인증하기
-    </CTAButtonS>
-  );
-};
-
 /** 2023-08-22 CTAContainer.tsx - CTA 참여하기 + GNB */
 const ErrorCTA = (): JSX.Element => {
   const navigate = useNavigate();
@@ -88,7 +79,7 @@ const ErrorCTA = (): JSX.Element => {
   );
 };
 
-export { JoinButtonCTA, SubmitButtonCTA, CTAContainer, BackButton, ErrorCTA };
+export { JoinButtonCTA, CTAContainer, BackButton, ErrorCTA };
 
 /** 2023-08-22 CTAContainer.tsx - CTA 참여하기 + GNB */
 const CTAContainerS = styled.div`
