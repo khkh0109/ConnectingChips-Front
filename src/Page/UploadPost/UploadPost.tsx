@@ -6,8 +6,8 @@ import axios from 'axios';
 import CreateExampleImage from '../../Component/UploadPost/CreateExampleImage';
 import UploadImage from '../../Component/UploadPost/UploadImage';
 import UploadText from '../../Component/UploadPost/UploadText';
-import { SubmitButtonCTA } from '../../Component/CTA/CTAContainer';
 import { DivideBaS } from '../../Component/Mission/GroupArticle';
+import { WideButton, ButtonWrapperS } from '../../Component/WideButton';
 import {
   GroupArticleS,
   HeadLine,
@@ -192,10 +192,9 @@ const UploadPost = () => {
             <UploadText initialText={INITIAL_TEXT} handleTextareaChange={handleTextareaChange} />
           </>
         )}
-
-        <SubmitButtonWrapperS>
-          <SubmitButtonCTA hasImage={image.file !== null} />
-        </SubmitButtonWrapperS>
+        <ButtonWrapperS $fixed>
+          <WideButton disabled={image.file === null}>인증하기</WideButton>
+        </ButtonWrapperS>
       </CreateFormS>
     </CreatePostS>
   );
@@ -212,19 +211,7 @@ const CreateFormS = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-`;
-
-const SubmitButtonWrapperS = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  bottom: 0;
-  background-color: #fff;
-
-  button {
-    width: 100%;
-  }
+  padding-bottom: 5.5rem;
 `;
 
 const spin = keyframes`

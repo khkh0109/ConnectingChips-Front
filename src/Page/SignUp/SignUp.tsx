@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 import {
+  WideButton,
+  ButtonWrapperS,
   SquareButton,
   EmailVerificationModal,
   CheckIcon,
@@ -12,8 +14,6 @@ import {
   Banner,
   LogInS,
   LoginInputS,
-  SignClearBtnS,
-  SignNotClearBtnS,
   infoIcon,
   Terms,
   GroupHeader,
@@ -222,21 +222,14 @@ const SignUp = () => {
           authenticationEmailRequest={authenticationEmailRequest}
         />
       )}
-      <BtnWrapperS>
-        {isValid && isAllAgreed && !isDuplicateId ? (
-          <SignClearBtnS type='submit' className='btn_width' onClick={handleSubmitButtonClick}>
-            메일 인증하고 회원가입
-          </SignClearBtnS>
-        ) : (
-          <SignNotClearBtnS
-            type='submit'
-            className='btn_width'
-            disabled={isValid && isAllAgreed && !isDuplicateId}
-          >
-            메일 인증하고 회원가입
-          </SignNotClearBtnS>
-        )}
-      </BtnWrapperS>
+      <ButtonWrapperS>
+        <WideButton
+          onClick={handleSubmitButtonClick}
+          disabled={!(isValid && isAllAgreed && isDuplicateId === false)}
+        >
+          메일 인증하고 회원가입
+        </WideButton>
+      </ButtonWrapperS>
     </LogInS>
   );
 };
@@ -387,15 +380,6 @@ const LoginInputContainerS = styled.div`
     &.hidden {
       display: none;
     }
-  }
-`;
-
-const BtnWrapperS = styled.div`
-  display: inline-block;
-  padding: 1rem;
-
-  button.btn_width {
-    width: 21.4375rem;
   }
 `;
 

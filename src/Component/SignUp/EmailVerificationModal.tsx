@@ -8,6 +8,7 @@ import { emailErr } from '../../Component/Toast/EmailErrorMsg';
 import { postSignup } from '../../API/signup';
 import { ReactComponent as CloseIcon } from '../../image/Icon/close_icon.svg';
 import { UNAUTHENTICATED_EMAIL } from '../../constant/error';
+import { WideButton, ButtonWrapperS } from '../WideButton';
 
 interface EmailVerificationModalProps {
   id: string;
@@ -60,7 +61,7 @@ const EmailVerificationModal = ({
         authenticationEmailRequest={authenticationEmailRequest}
       />
       <ButtonWrapperS>
-        <button onClick={handleSubmitButtonClick}>인증 완료</button>
+        <WideButton onClick={handleSubmitButtonClick}>인증 완료</WideButton>
       </ButtonWrapperS>
     </ContainerS>
   );
@@ -96,23 +97,5 @@ const ModalHeaderS = styled.div`
     top: 50%;
     left: 1rem;
     transform: translateY(-50%);
-  }
-`;
-
-const ButtonWrapperS = styled.div`
-  padding: 1rem;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--color-white);
-
-  button {
-    width: 100%;
-    height: 3.5rem;
-    border-radius: 1.875rem;
-    background-color: var(--color-main);
-    color: var(--font-color1);
-    font-size: 1rem;
   }
 `;
