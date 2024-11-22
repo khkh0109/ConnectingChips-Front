@@ -15,7 +15,7 @@
 
 ## 프로젝트 정보
 * 기간: 23.08.14 ~ 23.11.30
-* 링크: https://samchips.com
+* 링크: https://samchips.com (서버 종료)
 
 <br />
 
